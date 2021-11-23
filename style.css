@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  font: 100% Helevetica, sans-serif;
+}
+
+#check-circle-img {
+  /* css filters for #47c890 */
+  filter: invert(72%) sepia(9%) saturate(2174%) hue-rotate(102deg)
+    brightness(90%) contrast(101%);
+}
