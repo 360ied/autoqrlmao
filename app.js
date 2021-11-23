@@ -19,6 +19,10 @@
     }
   };
 
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+
   inputForm.onsubmit = (event) => {
     let studentID = studentIDInput.value;
 
