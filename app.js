@@ -11,26 +11,37 @@
     return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
   };
 
-  let toggleHide = (element) => {
-    if (element.getAttribute("hidden") !== null) {
-      element.removeAttribute("hidden");
-    } else {
+  let hide = (element, hidden) => {
+    if (hidden) {
       element.setAttribute("hidden", "hidden");
+    } else {
+      element.removeAttribute("hidden");
     }
+  };
+
+  let showScreen = (studentID) => {
+    dateText.innerHTML = `You are granted entry for: ${formattedDate()}`;
+    qrCode.makeCode(studentID);
+
+    hide(inputDiv, true);
+    hide(screenDiv, false);
   };
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js");
   }
 
+  let storedStudentID = localStorage.getItem("student_id");
+  if (storedStudentID !== null) {
+    showScreen(storedStudentID);
+  }
+
   inputForm.onsubmit = (event) => {
     let studentID = studentIDInput.value;
 
-    dateText.innerHTML = `You are granted entry for: ${formattedDate()}`;
-    qrCode.makeCode(studentID);
+    showScreen(studentID);
 
-    toggleHide(inputDiv);
-    toggleHide(screenDiv);
+    localStorage.setItem("student_id", studentID);
 
     event.preventDefault();
   };
