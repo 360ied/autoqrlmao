@@ -5,6 +5,7 @@
   let studentIDInput = document.getElementById("student-id-input");
   let dateText = document.getElementById("date-text");
   let qrCode = new QRCode(document.getElementById("qr-code-div"), {});
+  let circleImg = document.getElementById("check-circle-img");
 
   let formattedDate = () => {
     let d = new Date();
@@ -27,6 +28,11 @@
     hide(screenDiv, false);
   };
 
+  let showInput = () => {
+    hide(inputDiv, false);
+    hide(screenDiv, true);
+  };
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js");
   }
@@ -44,5 +50,10 @@
     localStorage.setItem("student_id", studentID);
 
     event.preventDefault();
+  };
+
+  circleImg.onclick = () => {
+    showInput();
+    localStorage.removeItem("student_id");
   };
 })();
