@@ -9,7 +9,10 @@
 
   let formattedDate = () => {
     let d = new Date();
-    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+
+    return `${d.getFullYear()}-${(d.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${d.getDate().toString().padStart(2, "0")}`;
   };
 
   let hide = (element, hidden) => {
