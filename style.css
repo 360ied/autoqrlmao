@@ -14,3 +14,8 @@ body {
   filter: invert(72%) sepia(9%) saturate(2174%) hue-rotate(102deg)
     brightness(90%) contrast(101%);
 }
+
+#date-text {
+  font-size: xx-large;
+  color: #333f3f;
+}
