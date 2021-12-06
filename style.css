@@ -6,11 +6,11 @@ body {
   text-align: center;
   min-height: 100vh;
 
-  font: 100% Helevetica, sans-serif;
+  font: 100% Helvetica, sans-serif;
 }
 
 #check-circle-img {
-  /* css filters for #47c890 */
+  /* css filter for #47c890 */
   filter: invert(72%) sepia(9%) saturate(2174%) hue-rotate(102deg)
     brightness(90%) contrast(101%);
 }
@@ -42,4 +42,54 @@ body {
   top: 50%;
   left: 3%;
   transform: translateY(-50%);
+}
+
+#screen-bottom-bar-div {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 70px;
+  z-index: 999;
+  background-color: #f9f9f9;
+
+  /* font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+}
+
+#screen-bottom-bar-flexbox-wrapper-div > div > p {
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 70px;
+}
+
+/* #screen-bottom-bar-alignment-wrapper-div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+
+#screen-bottom-bar-flexbox-wrapper-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-bar-focused {
+  /* css filter for #1f8476 */
+  filter: invert(39%) sepia(86%) saturate(407%) hue-rotate(122deg)
+    brightness(90%) contrast(82%);
+}
+
+/* #screening-at-home-text {
+  color: #1f8476;
+} */
+
+.bottom-bar-unfocused {
+  /* css filter for #a1a1a1 */
+  filter: invert(82%) sepia(0%) saturate(1219%) hue-rotate(171deg)
+    brightness(83%) contrast(74%);
 }
