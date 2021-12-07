@@ -93,3 +93,12 @@ body {
   filter: invert(82%) sepia(0%) saturate(1219%) hue-rotate(171deg)
     brightness(83%) contrast(74%);
 }
+
+#footer-div {
+  text-align: left;
+  font-weight: bold;
+}
+
+#footer-div > ul {
+  padding-left: 15px;
+}
