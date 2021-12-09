@@ -122,3 +122,11 @@ body {
 #footer-div > ul {
   padding-left: 15px;
 }
+
+#top-padding-div {
+  height: 60px;
+}
+
+#bottom-padding-div {
+  height: 45px;
+}
