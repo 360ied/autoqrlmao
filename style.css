@@ -6,7 +6,7 @@ body {
   text-align: center;
   min-height: 100vh;
 
-  font: 100% Helvetica, sans-serif;
+  font: 100% "SourceSansPro", Helvetica, Arial, sans-serif;
 }
 
 #check-circle-img {
@@ -130,6 +130,7 @@ body {
 #footer-div {
   text-align: left;
   font-weight: bold;
+  color: #333f3f;
 }
 
 #footer-div > ul {
