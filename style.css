@@ -15,11 +15,6 @@ body {
     brightness(90%) contrast(101%);
 }
 
-#date-text {
-  font-size: xx-large;
-  color: #333f3f;
-}
-
 #screen-top-bar-div {
   position: fixed;
   top: 0px;
@@ -92,4 +87,22 @@ body {
   /* css filter for #a1a1a1 */
   filter: invert(82%) sepia(0%) saturate(1219%) hue-rotate(171deg)
     brightness(83%) contrast(74%);
+}
+
+#entry-granted-text {
+  font-size: 34px;
+  color: #333f3f;
+  margin: 10px 0;
+}
+
+#name-text {
+  font-size: 22px;
+  color: #333f3f;
+  /* margin-top: 0 0 5px; */
+}
+
+#date-text {
+  font-size: 18px;
+  color: #333f3f;
+  margin: 0 0 30px;
 }

@@ -6,6 +6,8 @@
   let dateText = document.getElementById("date-text");
   let qrCode = new QRCode(document.getElementById("qr-code-div"), {});
   let circleImg = document.getElementById("check-circle-img");
+  let nameText = document.getElementById("name-text");
+  let studentNameInput = document.getElementById("student-name-input");
 
   let formattedDate = () => {
     let d = new Date();
@@ -23,9 +25,10 @@
     }
   };
 
-  let showScreen = (studentID) => {
-    dateText.innerHTML = `You are granted entry for: ${formattedDate()}`;
+  let showScreen = (studentID, studentName) => {
+    dateText.innerHTML = formattedDate();
     qrCode.makeCode(studentID);
+    nameText.innerHTML = studentName;
 
     hide(inputDiv, true);
     hide(screenDiv, false);
@@ -41,16 +44,19 @@
   }
 
   let storedStudentID = localStorage.getItem("student_id");
-  if (storedStudentID !== null) {
-    showScreen(storedStudentID);
+  let storedStudentName = localStorage.getItem("student_name");
+  if (storedStudentID !== null && storedStudentName !== null) {
+    showScreen(storedStudentID, storedStudentName);
   }
 
   inputForm.onsubmit = (event) => {
     let studentID = studentIDInput.value;
+    let studentName = studentNameInput.value;
 
-    showScreen(studentID);
+    showScreen(studentID, studentName);
 
     localStorage.setItem("student_id", studentID);
+    localStorage.setItem("student_name", studentName);
 
     event.preventDefault();
   };
