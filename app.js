@@ -64,5 +64,6 @@
   circleImg.onclick = () => {
     showInput();
     localStorage.removeItem("student_id");
+    localStorage.removeItem("student_name");
   };
 })();
